@@ -1,4 +1,3 @@
-
 #include <bits/stdc++.h>
 
 class Solution {
@@ -11,14 +10,14 @@ public:
             int l = i + 1;
             int r = n - 1;
             while(l < r){
-                int cSum = nums[i] + nums[l] + nums[r];
-                if(abs(cSum - target) < abs(closeSum - target))
-                    closeSum = cSum;
+                int currSum = nums[i] + nums[l] + nums[r];
+                if(abs(currSum - target) < abs(closeSum - target))
+                    closeSum = currSum;
                 
-                if(cSum < target){
+                if(currSum < target){
                     l++;
-                } else if(cSum > target) r--;
-                else return cSum;
+                } else if(currSum > target) r--;
+                else return currSum;
             }
         }
 
