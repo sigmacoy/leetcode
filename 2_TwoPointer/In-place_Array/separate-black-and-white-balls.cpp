@@ -1,4 +1,6 @@
+// GREEDY
 #include <bits/stdc++.h>
+
 class Solution {
 public:
     long long minimumSteps(string s) {
@@ -43,3 +45,4 @@ public:
 //         return ans;
 //     }
 // };
+// time O(n^2) because of nested while loops

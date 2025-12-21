@@ -24,5 +24,5 @@ public:
         return {-1, -1};
     }
 };
-// sort is O(n log n)
+// sort is O(n log n), worst case at O(n^2)
 // space O(n)
