@@ -11,7 +11,7 @@ public:
             int r = n - 1;
             while(l < r){
                 int currSum = nums[i] + nums[l] + nums[r];
-                if(abs(currSum - target) < abs(closeSum - target))
+                if(abs(currSum - target) < abs(closeSum - target)) // it must choose the smaller one
                     closeSum = currSum;
                 
                 if(currSum < target){

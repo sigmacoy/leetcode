@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-
+// expand from center pattern
 class Solution {
     int expandAroundCenter(string& s, int l, int r){
         int c = 0;
@@ -21,3 +21,5 @@ public:
         return c;
     }
 };
+// time: O(n^2) at worst case
+// space: O(1)

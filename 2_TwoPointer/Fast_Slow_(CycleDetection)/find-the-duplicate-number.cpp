@@ -21,3 +21,7 @@ public:
 };
 // time O(n)
 // space O(1)
+/*
+Input: nums = [1,3,4,2,2]
+Output: 2
+*/

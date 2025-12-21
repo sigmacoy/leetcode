@@ -21,6 +21,9 @@ public:
 // time: O(n)
 // space: O(1)
 
+// 101
+// Output: 1
+
 // Brute Force TLE
 // class Solution {
 // public:

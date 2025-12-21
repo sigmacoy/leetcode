@@ -26,4 +26,9 @@ public:
 };
 // time O(n)
 // space O(1)
-// i pray everything will be fine
+
+/*
+Input: start = "_L__R__R_", 
+      target = "L______RR"
+Output: true
+*/

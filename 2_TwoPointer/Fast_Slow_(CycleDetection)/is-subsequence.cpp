@@ -18,3 +18,8 @@ public:
 };
 // time O(n)
 // space O(1)
+
+/*
+Input: s = "abc", t = "ahbgdc"
+Output: true
+*/

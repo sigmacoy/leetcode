@@ -11,13 +11,10 @@ public:
         while(l <= r){
             int sum = people[l] + people[r];
             if(sum <= limit){
-                c++;
                 l++;
-                r--;
-            } else {
-                c++;
-                r--;
             }
+            c++;
+            r--;
         }
 
         return c;
@@ -25,3 +22,9 @@ public:
 };
 // time O(n log n) - introsort
 // space const variables O(1)
+
+/*
+Input: people = [3,2,2,1], limit = 3
+Output: 3
+Explanation: 3 boats (1, 2), (2) and (3)
+*/
