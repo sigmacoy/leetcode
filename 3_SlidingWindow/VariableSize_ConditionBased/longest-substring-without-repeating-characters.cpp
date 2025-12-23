@@ -6,14 +6,14 @@ public:
         unordered_set<char> uSet;
         int l = 0, r = 0;
         int maxLen = 0;
-        while(l < n && r < n){
+        while(r < n){
             if(uSet.count(s[r])){
                 uSet.erase(s[l]);
                 l++;
             } else {
                 uSet.insert(s[r]);
+                maxLen = max(maxLen, r - l + 1);
                 r++;
-                maxLen = max(maxLen, r - l);
             }
         }
         return maxLen;
@@ -21,3 +21,8 @@ public:
 };
 // time O(n)
 // space O(n)
+/*
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3. Note that "bca" and "cab" are also correct answers.
+*/
