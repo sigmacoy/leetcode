@@ -14,3 +14,13 @@ public:
 };
 // time: O(n)
 // space: O(1)
+/*
+Input: word = "dbca", numFriends = 2
+Output: "dbc"
+
+Explanation: 
+All possible splits are:
+"d" and "bca".
+"db" and "ca".
+"dbc" and "a".
+*/
