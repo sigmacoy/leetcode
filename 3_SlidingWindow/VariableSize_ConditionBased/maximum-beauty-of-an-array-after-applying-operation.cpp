@@ -1,9 +1,24 @@
 #include <bits/stdc++.h>
+class Solution {
+public:
+    int maximumBeauty(vector<int>& A, int k) {
+        sort(A.begin(), A.end());
+        int ans = 0;
+        int L = 0;
+        for(int R = 0; R < A.size(); R++){
+            while(A[R] - A[L] > 2 * k){
+                L++;
+            }
+            ans = max(ans, R - L + 1);
+        }
 
+        return ans;
+    }
+};
 
 /*
-time:
-space:
+time: O(n log n + n)
+space: O(1)
 
 Input: nums = [4,6,1,2], k = 2
 Output: 3
