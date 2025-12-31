@@ -3,10 +3,10 @@ class Solution {
 public:
     int maxFrequency(vector<int>& A, int k) {
         sort(A.begin(), A.end());
-        int L = 0, R = 0;
+        int L = 0;
         long maxLen = 0, total = 0;
 
-        while (R < A.size() ){
+        for(int R = 0; R < A.size(); R++){
             total += A[R];
 
             while (A[R] * static_cast<long>(R - L + 1) > total + k){
@@ -15,7 +15,6 @@ public:
             }
 
             maxLen = max(maxLen, static_cast<long>(R - L + 1));
-            R++;
         }
 
         return static_cast<int>(maxLen);        
