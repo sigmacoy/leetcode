@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+// With Prefix Sum
 class Solution {
 public:
     int shortestSubarray(vector<int>& A, int k) {

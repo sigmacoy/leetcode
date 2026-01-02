@@ -23,8 +23,8 @@ public:
 // time and space: O(n)
 
 /*
-Input: nums = [1,-1,-2,4,-7,3], k = 2
+Input: nums = [ 1,-1, -2, 4, -7, 3], k = 2
 Output: 7
 Explanation: You can choose your jumps forming the subsequence [1,-1,4,3] 
-    (underlined above). The sum is 7.
+The sum is 7.
 */
