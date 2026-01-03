@@ -1,33 +1,36 @@
 #include <bits/stdc++.h>
-
 class Solution {
-private:
-    int getNext(int n) {
+    int help(int n){
         int sum = 0;
-        while (n > 0) {
-            int digit = n % 10;
-            sum += digit * digit;
+        while(n){
+            int d = n % 10;
+            sum += d * d;
             n /= 10;
         }
         return sum;
     }
-    
 public:
     bool isHappy(int n) {
         int slow = n;
-        int fast = getNext(n);
-        
-        // Cycle detection
-        while (fast != 1 && slow != fast) {
-            slow = getNext(slow);
-            fast = getNext(getNext(fast));
+        int fast = help(n);
+
+        while(slow != fast && fast != 1){
+            slow = help(slow);
+            fast = help(help(fast));
         }
-        
+
         return fast == 1;
     }
 };
-// time - O(log n)
-// space - O(1)
+/* 
+time O(k log m)
+k = number of itr antod abot 1
+m = number of digits in curr number
+but in worst case:
+O(log n * log (log n) )
+
+space: O(1)
+*/
 
 /*
 Input: n = 19

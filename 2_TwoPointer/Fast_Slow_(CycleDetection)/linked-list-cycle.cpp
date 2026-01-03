@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
@@ -14,3 +13,7 @@ public:
         return false;
     }
 };
+/*
+time O(n)
+space O(1)
+*/

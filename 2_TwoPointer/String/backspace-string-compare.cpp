@@ -1,28 +1,48 @@
 #include <bits/stdc++.h>
 class Solution {
 public:
-    string help(string s){
-        stack<char> st;
-        for (char c : s){
-            if (c == '#'){
-                if (!st.empty()) st.pop(); 
-            } else st.push(c);
-        }
-
-        string res = "";
-        while (!st.empty()){
-            res += st.top(); st.pop();
-        }
-        return res;
-    }
-
     bool backspaceCompare(string s, string t) {
-        return help(s) == help(t);
+        int i = s.length() - 1;
+        int j = t.length() - 1;
+        int skipS = 0, skipT = 0;
+
+        while(i >= 0 || j >= 0){
+            while(i >= 0){
+                if(s[i] == '#'){
+                    skipS++;
+                    i--;
+                } else if(skipS > 0){
+                    skipS--;
+                    i--;
+                } else break;
+            }
+
+            while(j >= 0){
+                if(t[j] == '#'){
+                    skipT++;
+                    j--;
+                } else if(skipT > 0){
+                    skipT--;
+                    j--;
+                } else break;
+            }
+
+            if(i >= 0 && j >= 0){
+                if(s[i] != t[j]) return false;
+            } else if(i >= 0 || j >= 0){
+                return false;
+            }
+
+            i--;
+            j--;
+        }
+
+        return true;
     }
 };
 // time O(n)
-// space O(n) -> stack
+// space O(1) 
 
 // ab#e 
 // ac#e 
-// True
+// Output = true
