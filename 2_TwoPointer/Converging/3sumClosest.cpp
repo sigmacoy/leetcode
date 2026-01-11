@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-
 class Solution {
 public:
     int threeSumClosest(vector<int>& nums, int target) {
@@ -7,16 +6,14 @@ public:
         int n = nums.size();
         int closeSum = nums[0] + nums[1] + nums[2];
         for(int i = 0; i < n - 2; i++){
-            int l = i + 1;
-            int r = n - 1;
-            while(l < r){
-                int currSum = nums[i] + nums[l] + nums[r];
+            int L = i + 1;
+            int R = n - 1;
+            while(L < R){
+                int currSum = nums[i] + nums[L] + nums[R];
                 if(abs(currSum - target) < abs(closeSum - target)) // it must choose the smaller one
                     closeSum = currSum;
-                
-                if(currSum < target){
-                    l++;
-                } else if(currSum > target) r--;
+                if(currSum < target) L++;
+                else if(currSum > target) R--;
                 else return currSum;
             }
         }
@@ -24,7 +21,6 @@ public:
         return closeSum;
     }
 };
-
 /*
 time O(n log n + n * n)
 space O(log n)

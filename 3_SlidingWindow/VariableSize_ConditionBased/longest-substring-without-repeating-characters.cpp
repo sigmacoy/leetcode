@@ -3,19 +3,19 @@ class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
         int n = s.length();
-        unordered_set<char> uSet;
-        int l = 0, r = 0;
+        unordered_set<char> st;
         int maxLen = 0;
-        while(r < n){
-            if(uSet.count(s[r])){
-                uSet.erase(s[l]);
-                l++;
-            } else {
-                uSet.insert(s[r]);
-                maxLen = max(maxLen, r - l + 1);
-                r++;
+        int L = 0, R = 0;
+        while(R < n){
+            while(st.count(s[R])){
+                st.erase(s[L]);
+                L++;
             }
+            st.insert(s[R]);
+            maxLen = max(maxLen, R - L + 1);
+            R++;
         }
+
         return maxLen;
     }
 };

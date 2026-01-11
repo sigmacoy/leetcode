@@ -4,19 +4,20 @@ public:
     int compress(vector<char>& chars) {
         int writeIdx = 0;
         int i = 0;
+        int n = chars.size();
 
-        while (i < chars.size()){
+        while (i < n){
             char currCh = chars[i];
             int count = 0;
 
-            while(i < chars.size() && chars[i] == currCh){
+            while(i < n && chars[i] == currCh){
                 i++;
                 count++;
             }
 
             chars[writeIdx++] = currCh;
 
-            if(count > 1){ // if more than 1
+            if(count > 1){ // if more than 1, input is ["a"] -> dapat ["a"] rajud na
                 for(char c : to_string(count)){ // naa nyay numbers 10 and above
                     chars[writeIdx++] = c;
                 }
