@@ -20,3 +20,9 @@
 
 10. LIMIT - takes the remaining number of rows requested.
 
+# MORE
+1. 
+WHERE: Filters rows before grouping.
+HAVING: Filters groups after grouping.
+
+2. 
