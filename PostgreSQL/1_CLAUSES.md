@@ -2,24 +2,21 @@
 -- Playground Link
 -- https://www.w3schools.com/sql/trysql.asp?filename=trysql_editor
 
+# CLAUSES
 
 SELECT – Choose column/s
-
-
 FROM – Specify table
 
-
 WHERE – Filter rows
-
+    - for filtering results.
 
 GROUP BY – Group rows for aggregates
     - only one distinct ?
 
 HAVING – Filter groups
 
-
 ORDER BY – Sort results
-    - ORDER BY salary DESC
+    - ORDER BY salary DESC <-------------- ADD KEYWORD "DESC" para DECREASING SORT
 
 LIMIT - Restrict number of rows
     - LIMIT 10
@@ -41,15 +38,12 @@ UNION - Combine result sets
     - UNION / UNION ALL
     - SELECT a FROM t1 UNION SELECT b FROM t2
 
-
 WITH - Common Table Expression (CTE)
     - WITH temp AS (SELECT * FROM users) SELECT * FROM temp;
-
 
 WINDOW (for window functions)
     - Define window for functions
     - WINDOW w AS (PARTITION BY dept ORDER BY salary)
-
 
 DISTINCT - Remove duplicates
     - SELECT DISTINCT city
@@ -57,17 +51,16 @@ DISTINCT - Remove duplicates
 
 ON (for JOIN conditions)
     - ON users.id = orders.user_id
+    - for relationship matching
 
 USING (for JOIN shorthand)
     - JOIN departments USING (dept_id)
-
 
 FILTER – Conditional aggregate (PostgreSQL)
     - SUM(sales) FILTER (WHERE year = 2023)
 
 CROSS JOIN – Every row with every row (Cartesian product)
     - SELECT * FROM a CROSS JOIN b
-
 
 PARTITION BY – Divides rows into groups for window functions
     - ROW_NUMBER() OVER (PARTITION BY dept ORDER BY salary)
@@ -83,3 +76,10 @@ ROW – Single record in a table / Row constructor
 
 Table – Collection of rows and columns
     - CREATE TABLE employees (id INT, name TEXT)
+
+# MORE
+1. 
+WHERE: Filters rows before grouping first. (before GROUP BY)
+HAVING: Filters groups after grouping.
+
+2. 
