@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-using pii = pair<int, int>;
+using pii = pair<int, int>; // value, idx
 class Solution {
 public:
     int sumSubarrayMins(vector<int>& arr) {
@@ -16,14 +16,14 @@ public:
         }
 
         for(int i = 0; i < n; i++){
-            // for previous less
+            // find previous less
             while(!sPrev.empty() && sPrev.top().first > arr[i])
                 sPrev.pop();
             
             left[i] = sPrev.empty() ? i + 1 : i - sPrev.top().second;
             sPrev.push( {arr[i], i} );
 
-            // for next less
+            // find next less
             while(!sNext.empty() && sNext.top().first > arr[i]){
                 auto x = sNext.top();
                 sNext.pop();
@@ -31,6 +31,9 @@ public:
             }
             sNext.push( {arr[i], i} );
         }
+
+        // left = [1, 2, 1, 1]
+        // right = [1, 3, 2, 1]
 
         for(int i = 0; i < n; i++){
             ans = (ans + (long long) arr[i] * left[i] * right[i]) % MOD;
@@ -40,8 +43,17 @@ public:
     }
 };
 /*
-NLE (Next Larger Element)
-PLE (Previous Larger Element) - Same but to the left.
+nge - next greater elem
+pse - previous smaller elem
+nse - next smaller elem 
+ple - previous larger elem
+nsi - next smaller idx
 
-Both use monotonic decreasing stack.
+both use monotonic decreasing stack.
+
+left[i] = number of consecutive elements to the left until we hit a smaller number (plus 1 for itself). 
+This is i - index_of_previous_smaller.
+
+right[i] = number of consecutive elements to the right until we hit a smaller number (plus 1 for itself). 
+This is index_of_next_smaller - i.
 */
