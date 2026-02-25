@@ -22,6 +22,9 @@ n >> 1;  // divide by 2
 
 ## 3. Toggle nth bit
 n ^= (1 << k);
+    Binary:   1 0 0 1
+    Position: 3 2 1 0   
+                    ^ k=0
 
 ## 4. Set nth bit ~> Force to 1
 n |= (1 << k);
@@ -42,8 +45,6 @@ while (n) {
     OR do use __builtin_popcount
     int n = 19; // binary 10011
     cout << __builtin_popcount(n); // output: 3 (three 1's)
-
-
 
 ## 8. Get lowest set bit = rightmost 1 position.
 n & -n;
