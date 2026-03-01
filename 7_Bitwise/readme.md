@@ -52,14 +52,12 @@ n & -n;
      ^ this one (position 0)
 
 ## 9. Remove leading zeros:
-string s = "0001";
-size_t pos = s.find_first_not_of('0');
+string full = bitset<32>(10).to_string();
+string binary = full.substr(full.find('1'));
 
-if (pos == string::npos) {
-    s = "0";
-} else {
-    s = s.substr(pos);
-}
 ### size_t is an unsigned integer type, not an iterator.
 ### It's used for sizes and indices. find_first_not_of() returns an index position (like array index), which is size_t.
 
+## 10. 
+
+## 11. 
