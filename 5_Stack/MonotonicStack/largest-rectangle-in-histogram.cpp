@@ -1,4 +1,7 @@
 #include <bits/stdc++.h>
+
+// monotonic stack but different on the Largest_Rectangle_Histogram folder
+
 class Solution {
 public:
     int largestRectangleArea(vector<int>& A) {
