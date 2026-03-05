@@ -9,11 +9,12 @@ FROM – Specify table
 
 WHERE – Filter rows
     - for filtering results.
+    - Filters rows BEFORE grouping.
 
 GROUP BY – Group rows for aggregates
     - only one distinct ?
 
-HAVING – Filter groups
+HAVING – Filter groups AFTER grouping.
 
 ORDER BY – Sort results
     - ORDER BY salary DESC <-------------- ADD KEYWORD "DESC" para DECREASING SORT
