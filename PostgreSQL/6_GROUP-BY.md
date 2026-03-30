@@ -22,4 +22,11 @@ ORDER BY percentage DESC, r.contest_id
 -- ----------------------------------------------------
 
 r.contest_id → not aggregated → needs GROUP BY
-tu.total → not aggregated → also needs GROUP BY
+tu.total → not aggregated → needs GROUP BY
+
+aggregated ?
+    - gathering multiple rows of data and "squashing" them into a single result.
+
+If a column is in your SELECT but not inside an aggregate function (like SUM or COUNT), it must be in the GROUP BY.
+
+-- ----------------------------------------------------
