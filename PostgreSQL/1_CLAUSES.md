@@ -25,8 +25,8 @@ LIMIT - Restrict number of rows
 OFFSET - Skip rows
     - OFFSET 5
 
-JOIN - Combine tables
-    - (INNER, LEFT, RIGHT, FULL, CROSS)
+JOIN - Combine tables 
+    - (INNER is default, LEFT, RIGHT, FULL, CROSS)
     - JOIN departments ON employees.dept_id = departments.id
     
     - JOIN (short for Inner Join) only returns rows where there is a match in both tables.
