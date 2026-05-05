@@ -27,5 +27,17 @@ int main(){
     string ans = "1001";
     int ansVal = stoi(ans, nullptr, 2);
 
+
+
+    // WITHOUT TRAILING ZEROES
+    string temp = "10";
+    string newTemp = temp.substr(0, temp.find_last_not_of('0') + 1);
+    if(newTemp.empty()) newTemp = "0";
+    cout << newTemp << endl;
+
+
+    
+
+
     return 0;
 }
