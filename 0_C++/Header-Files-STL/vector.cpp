@@ -19,6 +19,11 @@ using namespace std;
 // insert(), emplace(), push_back(), emplace_back(), pop_back(), resize(), swap(), erase(), clear()
 
 int main() {
+
+    // Initialize 2D Vector given values
+    int rows = 1, cols = 1;
+    vector<vector<int>> dp(rows, vector<int>(cols, 0));
+
     // Declarations
     vector<int> arr1; // Empty vector
     vector<int> arr2(5, 20); // 5 elements, each initialized to 20
